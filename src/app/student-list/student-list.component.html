@@ -1,0 +1,45 @@
+<app-student-filters (filterStudentsEvent)="filterStudentsHandler($event)"></app-student-filters>
+
+<div>
+  <ul class="user-profiles-list-basic">
+
+    <li *ngFor="let student of filteredStudents"
+      [ngClass]="{'domestic-student': student.category === 'Domestic', 'international-student': student.category === 'International'}">
+
+      <a href="#"
+        class="user-avatar">
+        <img src="{{student.imgUrl}}"
+          width="120"
+          alt="Profile of Adeline Yong" />
+      </a>
+
+      <p>
+        <a href="">{{student.name}}</a> <br> <br>
+        Father - {{student.fatherName}} <br>
+        Mother - {{student.motherName}} <br> <br>
+        <span>Last Class Score <i> {{student.lastClassScore}}</i></span>
+        <br>
+
+      </p>
+
+      <a [routerLink]="['/onboard']"
+        [queryParams]="{ studentId: student.uid, viewMode: 'VIEW'}">
+        <button class="button">View</button>
+      </a>
+      <a [routerLink]="['/onboard']"
+        [queryParams]="{ studentId: student.uid, viewMode: 'EDIT'}">
+        <button class="button"> Edit</button>
+      </a>
+
+      <a class="delete"
+        (click)="deleteStudent(student.uid)"><i class="fa fa-close"></i></a>
+
+    </li>
+
+  </ul>
+</div>
+
+<p-confirmDialog key="deleteStudent"
+  icon="fa fa-question-circle"
+  width="445">
+</p-confirmDialog>

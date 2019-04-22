@@ -1,0 +1,17 @@
+<div *ngIf="userLoggedIn"
+  class="topbar clearfix header-style">
+  <div class="top-left">
+    <p-menubar styleClass="menuLeft"
+      [model]="items"
+      autoDisplay="false"></p-menubar>
+  </div>
+  <div class="top-right">
+    <div class="top-page-heading">
+    </div>
+    <div class="user-info">
+      <p-menubar [model]="HeaderMenuItem"
+        styleClass="userRight">
+      </p-menubar>
+    </div>
+  </div>
+</div>

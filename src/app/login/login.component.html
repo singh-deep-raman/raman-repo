@@ -1,0 +1,21 @@
+<div class="loginbox">
+  <img src="../../assets/images/avatar.png"
+    class="avatar">
+  <h1>Login Here</h1>
+  <form [formGroup]="userForm">
+    <p>Username</p>
+    <input type="text"
+      formControlName="username"
+      value="admin">
+    <p>Password</p>
+    <input type="password"
+      formControlName="password"
+      value="admin">
+    <input id="loginBtn"
+      type="button"
+      (click)="isValidUser()"
+      value="Login">
+    <a href="#">Lost your password?</a><br>
+    <a href="#">Don't have an account?</a>
+  </form>
+</div>

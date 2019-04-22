@@ -1,0 +1,97 @@
+<div class="testbox">
+  <h1>Student Onboarding</h1>
+
+  <form [formGroup]="studentForm">
+    <hr>
+
+    <label id="icon"><i class="icon-user"></i></label>
+    <input formControlName="name"
+      type="text"
+      placeholder="Name" />
+
+    <label id="icon"><i class="icon-user"></i></label>
+    <select formControlName="category">
+      <option label="Domestic"
+        value="Domestic"></option>
+      <option label="International"
+        value="International"></option>
+    </select><br>
+
+    <div class="ui-g ui-chkbox-label">
+      <label id="icon"><i class="icon-user"></i></label>
+      <select disabled="true">
+        <option label="Documents"
+          value="Domestic">
+        </option>
+      </select><br>
+      <div style="margin-left: 70px; width:250px; margin-top:10px;"
+        class="ui-g">
+        <div *ngFor="let doc of documentTypes;"
+          class="ui-g-12">
+          <p-checkbox [formControl]="studentForm.controls['documents']"
+            [value]="doc.docId"
+            [label]="doc.docName">
+          </p-checkbox>
+          <label *ngIf="(doc.forDomestic && studentForm.controls['category'].value === 'Domestic') || 
+          (doc.forInternational && studentForm.controls['category'].value === 'International')">*</label>
+        </div>
+      </div>
+    </div>
+
+    <label id="icon"><i class="icon-user"></i></label>
+    <p-calendar formControlName="dob"
+      dateFormat="dd/mm/yy"
+      formControlName="dob"
+      placeholder="Date of Birth"></p-calendar>
+
+
+    <label id="icon"><i class="icon-user"></i></label>
+    <input formControlName="fatherName"
+      type="text"
+      placeholder="Father's Name"
+      required />
+
+    <label id="icon"><i class="icon-user"></i></label>
+    <input formControlName="motherName"
+      type="text"
+      placeholder="Mother's Name" />
+
+    <label id="icon"
+      for="name"><i class="icon-user"></i></label>
+    <input formControlName="lastClassScore"
+      type="text"
+      placeholder="Last Class Score"
+      required />
+
+    <div class="gender">
+      <input formControlName="gender"
+        type="radio"
+        value="Male"
+        id="male"
+        name="gender"
+        checked />
+      <label for="male"
+        class="radio">Male</label>
+      <input formControlName="gender"
+        type="radio"
+        value="Female"
+        id="female"
+        name="gender" />
+      <label for="female"
+        class="radio">Female</label>
+    </div>
+    <p>By clicking Onboard, you agree on our <a href="#">terms and condition</a>.</p>
+
+
+    <a (click)="viewMode !== 'VIEW' && onboardStudent()"
+      [ngClass]="{'button': !studentForm.invalid, 'disable-btn':studentForm.invalid }">
+
+      <label *ngIf="viewMode === '' || viewMode === undefined">Onboard</label>
+      <label *ngIf="viewMode === 'VIEW'">Already Onboarded</label>
+      <label *ngIf="viewMode === 'EDIT'">Update</label>
+    </a>
+  </form>
+
+</div>
+
+<label *ngFor="let doc "></label>

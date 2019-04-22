@@ -1,0 +1,165 @@
+/* You can add global styles to this file, and also import other style files */
+
+.bg-gradient {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+/* Confirmation dialog css */
+/* used */
+.ui-dialog .ui-dialog-footer {
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 0.571em 1em;
+  margin: 0;
+  text-align: right;
+  position: relative;
+  top: -1px;
+}
+.ui-dialog-titlebar {
+  border: 1px solid #c8c8c8;
+  background-color: #f4f4f4;
+  color: #333333;
+  padding: 1em;
+  font-weight: 700;
+  border-bottom: 0 none;
+}
+.ui-dialog .ui-dialog-content {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #c8c8c8;
+  padding: 0.571em 1em;
+}
+.ui-dialog{position:fixed;padding:0}
+.ui-dynamicdialog{top:50%;left:50%}.ui-dialog .ui-dialog-titlebar{padding:.5em .75em;position:relative;border:0}.ui-dialog 
+.ui-dialog-content{
+  position:relative;
+  border:0;padding:.5em .75em;
+  /* background:0 0; */
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  zoom:1
+}
+.ui-dialog-resizable .ui-dialog-content{overflow:auto}.ui-dialog .ui-resizable-se{width:14px;height:14px;right:3px;bottom:3px}.ui-draggable 
+.ui-dialog-titlebar{cursor:move}.ui-dialog 
+.ui-dialog-titlebar-icon{
+  text-decoration:none;
+  float:right;padding:.125em;cursor:pointer;border:1px solid transparent}.ui-dialog .ui-dialog-titlebar-icon span{display:block;margin:0}.ui-dialog-footer{padding:1em;border-width:1px 0 0;text-align:right}.ui-dialog-mask{position:fixed;width:100%;height:100%}.ui-dialog-maximized{transition:left .3s,top .3s,width .3s,height .3s}.ui-confirmdialog{width:30em;top:50%;left:50%}.ui-confirmdialog.ui-dialog .ui-dialog-content{padding:1em 2em}.ui-confirmdialog .ui-dialog-content .ui-confirmdialog-icon{font-size:1.5em;vertical-align:middle;margin-right:.5em}.ui-confirmdialog .ui-dialog-content .ui-confirmdialog-message{vertical-align:middle}.ui-dialog-footer .ui-button{margin-right:.25em}.ui-fluid .ui-dialog-footer .ui-button{width:auto}.ui-rtl .ui-dialog .ui-dialog-titlebar-close{float:left}.ui-rtl .ui-dialog .ui-dialog-buttonpane button{text-align:right}@media screen and (max-width:40em){.ui-confirmdialog{width:90%}}.ui-dropdown{display:inline-block;position:relative;cursor:pointer;vertical-align:middle;min-width:12.5em}.ui-dropdown .ui-dropdown-clear-icon{position:absolute;right:2em;top:50%;font-size:1em;height:1em;margin-top:-.5em}.ui-dropdown .ui-dropdown-trigger{border-right:none;border-top:none;border-bottom:none;cursor:pointer;width:1.5em;height:100%;position:absolute;right:0;top:0;padding:0 .25em}
+
+
+
+  /* Toast styling */
+.ui-toast .ui-toast-message {
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  margin: 0 0 1em 0;
+}
+.ui-toast .ui-toast-message.ui-toast-message-info {
+  background-color: #7fbcec;
+  border: 0 none;
+  color: #212121;
+}
+.ui-toast .ui-toast-message.ui-toast-message-info .ui-toast-close-icon {
+  color: #212121;
+}
+.ui-toast .ui-toast-message.ui-toast-message-success {
+  background-color: #b7d8b7;
+  border: 0 none;
+  color: #212121;
+}
+.ui-toast .ui-toast-message.ui-toast-message-success .ui-toast-close-icon {
+  color: #212121;
+}
+.ui-toast .ui-toast-message.ui-toast-message-warn {
+  background-color: #ffe399;
+  border: 0 none;
+  color: #212121;
+}
+.ui-toast .ui-toast-message.ui-toast-message-warn .ui-toast-close-icon {
+  color: #212121;
+}
+.ui-toast .ui-toast-message.ui-toast-message-error {
+  background-color: #f8b7bd;
+  border: 0 none;
+  color: #212121;
+}
+.ui-toast .ui-toast-message.ui-toast-message-error .ui-toast-close-icon {
+  color: #212121;
+}
+
+.ui-toast{position:fixed;width:20em}.ui-toast .ui-toast-message{position:relative;display:block;margin-bottom:.75em;overflow:hidden}.ui-toast .ui-toast-message-content{padding:.5em 1em}.ui-toast .ui-toast-close-icon{position:absolute;top:.25em;right:.25em;cursor:pointer;display:inline-block}.ui-toast .ui-toast-summary{font-weight:700;padding:0 0 .5em;display:block}.ui-toast .ui-toast-icon{position:absolute;display:inline-block;left:.5em;top:.25em;padding:0;font-size:2em}.ui-toast .ui-toast-message-text-content{padding:0 0 .25em;margin-left:2.5em}.ui-toast-top-right{top:20px;right:20px}.ui-toast-top-left{top:20px;left:20px}.ui-toast-bottom-right{bottom:20px;right:20px}.ui-toast-bottom-left{bottom:20px;left:20px}.ui-toast-top-center{top:20px;left:50%;margin-left:-10em}.ui-toast-bottom-center{bottom:20px;left:50%;margin-left:-10em}.ui-toast-center{left:50%;top:50%;min-width:20vw;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+
+/* Styling for checkboxes */
+.ui-chkbox{
+  display:inline-block;
+  cursor:pointer;
+  vertical-align:middle;
+  height: 20px;
+  /* margin-right:.25em;
+  -ms-user-select:none;
+  user-select:none;
+  -moz-user-select:none; */
+  -webkit-user-select:none;
+}
+.ui-chkbox-label{
+  vertical-align:middle;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 10px;
+}
+/* .ui-chkbox .ui-chkbox-box{
+  border: 1px solid #a6a6a6;
+  width:20px;
+  height:20px;
+  border-radius:2px;
+  text-align:center;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+} */
+/* .ui-chkbox .ui-chkbox-icon{display:block} */
+.ui-g::after{clear:both;content:"";display:table;box-sizing:border-box;} 
+
+.ui-widget,.ui-widget *{box-sizing:border-box;}
+
+
+/* Date picker styling */
+.ui-calendar{position:relative;display:inline-block}.ui-calendar .ui-calendar-button{height:100%;border-top-left-radius:0;border-bottom-left-radius:0;width:2em;border-left:0}.ui-calendar .ui-calendar-button:enabled:hover,.ui-calendar .ui-calendar-button:focus{border-left:0}.ui-calendar .ui-datepicker{min-width:100%}
+
+.ui-fluid .ui-calendar-button{width:2em}.ui-fluid .ui-datepicker-buttonbar button{width:auto}.ui-fluid .ui-calendar.ui-calendar-w-btn .ui-inputtext{width:calc(100% - 2em)}.ui-datepicker{width:auto;padding:.2em;position:absolute}.ui-datepicker.ui-datepicker-inline{display:inline-block;position:static}.ui-datepicker .ui-datepicker-group{border-width:0}.ui-datepicker .ui-datepicker-header{position:relative;padding:.5em 0}
+
+.ui-datepicker .ui-datepicker-prev{left:.125em}.ui-datepicker .ui-datepicker-next{right:.125em}.ui-datepicker .ui-datepicker-next span,.ui-datepicker .ui-datepicker-prev span{display:block;position:absolute;left:50%;top:50%;margin-top:-.5em;margin-left:-.5em}
+
+
+.ui-datepicker .ui-datepicker-title{margin:0 2.3em;line-height:1.8em;text-align:center}.ui-datepicker .ui-datepicker-title select{font-size:1em;margin:.125em 0;vertical-align:middle}.ui-datepicker select.ui-datepicker-month{margin-right:.25em}.ui-datepicker span.ui-datepicker-year{margin-left:.25em}
+
+.ui-datepicker-multiple-month .ui-datepicker-group{display:table-cell;border-width:0 1px 0 0}.ui-datepicker table{width:100%;font-size:.9em;border-collapse:collapse;margin:0 0 .4em}.ui-datepicker th{padding:.5em;text-align:center;font-weight:700;border:0}.ui-datepicker td{border:0;padding:0}.ui-datepicker td>a,.ui-datepicker td>span{display:block;padding:.5em;text-decoration:none;border:0;text-align:center}
+
+/* Raman */
+.ui-calendar, .ui-datepicker {
+  background-color: white;
+  width: 300px;
+}
+.ui-datepicker .ui-datepicker-next,.ui-datepicker .ui-datepicker-prev{
+  position:absolute;
+  top:.5em;
+  width:1.8em;
+  height:1.8em;
+  border: 1px solid;
+}
+.pi{font-family:primeicons;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.pi-fw{width:1.28571429em;text-align:center}.pi-spin{-webkit-animation:2s linear infinite fa-spin;animation:2s linear infinite fa-spin}
+
+.ui-calendar input {
+width: 300px;
+height:40px;
+font-family: 'Open Sans', sans-serif;
+font-size: 16px;
+color: #4c4c4c;
+}
+
+/* Menubar item */
+.ui-menubar{padding:.25em}.ui-menubar:after{content:"";clear:both;display:table}.ui-menubar ul{margin:0;padding:0;list-style:none}.ui-menubar .ui-menuitem-link{display:block;padding:.25em;position:relative;text-decoration:none}.ui-menubar .ui-menubar-root-list{display:inline-block}.ui-menubar .ui-menubar-root-list>.ui-menuitem{display:inline-block;position:relative}.ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link{padding:.5em}.ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link>.ui-submenu-icon{vertical-align:middle;margin-left:.25em}.ui-menubar .ui-menubar-root-list>li ul{display:none}.ui-menubar .ui-menubar-root-list>.ui-menu-separator{display:inline-block;vertical-align:middle;height:1.5em}.ui-menubar .ui-submenu-list{display:none;position:absolute;min-width:12.5em;padding:.25em}.ui-menubar .ui-submenu-list .ui-menuitem{margin:.125em 0;position:relative}.ui-menubar .ui-menuitem-icon{margin-right:.25em;vertical-align:middle; color: white}.ui-menubar 
+.ui-menuitem-text{
+  color: white;
+  text-decoration: underline;
+  vertical-align:middle}
+
+.ui-menubar .ui-submenu-list .ui-menuitem-link .ui-submenu-icon{position:absolute;margin-top:-.5em;right:0;top:50%}.ui-menubar .ui-menuitem-active>.ui-submenu>.ui-submenu-list{display:block}.ui-menubar .ui-menubar-custom{float:right;padding:.25em}.ui-message{border:1px solid;margin:0 .25em;padding:.25em .5em;display:inline-block;vertical-align:top}.ui-message .ui-message-icon,.ui-message .ui-message-text{vertical-align:middle}

@@ -1,0 +1,31 @@
+<div class="container">
+  <input type="text"
+    (input)="getFilteredStudents()"
+    [(ngModel)]="studentFilter.studentName"
+    placeholder="Search...">
+  <div class="search"></div>
+
+  <div class="box">
+    <select [(ngModel)]="studentFilter.studentType"
+      (change)="getFilteredStudents()">
+      <option>Both</option>
+      <option>Domestic</option>
+      <option>International</option>
+    </select>
+  </div>
+
+  <div>
+    <fieldset id="domestic"
+      style="background-color:#a7ffd3;">
+      <legend>Domestic</legend>
+      <p style="height: 10px;"></p>
+    </fieldset>
+
+    <fieldset id="international"
+      style="background-color:#ffc4c4;">
+      <legend>International</legend>
+      <p style="height: 10px;"></p>
+    </fieldset>
+  </div>
+
+</div>
