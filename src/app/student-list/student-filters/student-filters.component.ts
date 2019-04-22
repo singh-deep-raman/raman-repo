@@ -16,6 +16,11 @@ export class StudentFiltersComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * This method emits event to filter data according to filter input
+   *
+   * @memberof StudentFiltersComponent
+   */
   getFilteredStudents() {
     this.filterStudentsEvent.emit(this.studentFilter);
   }

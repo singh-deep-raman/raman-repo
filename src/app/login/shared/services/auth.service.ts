@@ -2,7 +2,12 @@ import { User } from './../../../shared/models/user.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-
+/**
+ * This service is used for authentication of user.
+ *
+ * @export
+ * @class AuthService
+ */
 @Injectable()
 export class AuthService {
 
@@ -17,9 +22,10 @@ export class AuthService {
   }
 
   /**
+   * This method returns true if the username and password belongs to valid user, otherwise false
    *
    *
-   * @param {User} user
+   * @param {User} user - user object contains username and password
    * @returns
    * @memberof AuthService
    */

@@ -1,3 +1,9 @@
+/**
+ * Model to hold student document information
+ *
+ * @export
+ * @class StudentDocument
+ */
 export class StudentDocument {
 
   docId = '';

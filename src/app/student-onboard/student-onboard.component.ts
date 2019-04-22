@@ -70,7 +70,6 @@ export class StudentOnboardComponent implements OnInit {
         this.messageService.add({ severity: 'error', summary: 'Some error occurred !!!' });
       });
     }
-
   }
 
   /**
@@ -90,7 +89,11 @@ export class StudentOnboardComponent implements OnInit {
    */
   onboardStudent() {
     const student = new Student();
-    student.uid = faker.random.uuid();
+    if (this.viewMode === '' || this.viewMode === undefined) {
+      student.uid = faker.random.uuid();
+    } else {
+      student.uid = this.studentId;
+    }
     student.name = this.studentForm.get('name').value;
     student.category = this.studentForm.get('category').value;
     const documentsSelected = this.studentForm.get('documents').value;
@@ -110,6 +113,12 @@ export class StudentOnboardComponent implements OnInit {
     }
   }
 
+  /**
+   * This method hits server to udpate student details
+   *
+   * @param {Student} student
+   * @memberof StudentOnboardComponent
+   */
   updateStudent(student: Student) {
     this.studentService.updateStudent(student).subscribe(response => {
       this.messageService.add({ severity: 'success', summary: 'Student updated successfully !!!' });
@@ -118,6 +127,12 @@ export class StudentOnboardComponent implements OnInit {
     });
   }
 
+  /**
+   * This method uses service to onboard a new student
+   *
+   * @param {Student} student
+   * @memberof StudentOnboardComponent
+   */
   onboardNewStudent(student: Student) {
     this.studentService.onboardStudent(student).subscribe(response => {
       this.studentForm.reset();

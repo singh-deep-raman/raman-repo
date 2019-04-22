@@ -3,7 +3,16 @@ import { MenuItem } from 'primeng/components/common/menuitem';
 import { Router } from '@angular/router';
 import { AuthService } from '../login/shared/services/auth.service';
 import { User } from '../shared/models/user.model';
-
+import { MessageService } from 'primeng/api';
+/**
+ * This component is used to display header of application when user is logged in.
+ * It contains 2 links to Onboard and view students.
+ * It also displays logout button and logged in user name.
+ *
+ * @export
+ * @class HeaderComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -18,10 +27,15 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthService) {
+    private authService: AuthService,
+    private messageService: MessageService) {
     this.storage = window.sessionStorage;
   }
-
+  /**
+   * This method initializes header component navigation links and subscribes to logged in user variable
+   *
+   * @memberof HeaderComponent
+   */
   ngOnInit() {
     this.HeaderMenuItem = [
       {
@@ -35,6 +49,7 @@ export class HeaderComponent implements OnInit {
         command: (() => {
           this.storage.clear();
           this.userLoggedIn = false;
+          this.messageService.add({ severity: 'success', summary: 'Logged out successfully !!!' });
           this.router.navigate(['/login']);
         })
       }
@@ -48,7 +63,6 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'List Students',
-        // icon: 'fa-dashboard', todo
         routerLink: 'students'
       }];
     this.authService.userLoggedIn$.subscribe(loggedIn => {

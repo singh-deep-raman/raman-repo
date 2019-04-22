@@ -7,6 +7,13 @@ import * as faker from 'faker';
 import { User } from '../models/user.model';
 import { Observable, Subject } from 'rxjs';
 
+/**
+ * This service acts as MOCK Server
+ *
+ * @export
+ * @class InMemoryDataService
+ * @implements {InMemoryDbService}
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +23,13 @@ export class InMemoryDataService implements InMemoryDbService {
   registeredUsers = new Array<User>();
   documentTypes = new Array<StudentDocument>();
 
-  constructor() {
-  }
+  constructor() { }
+  /**
+   * This method creates dummy student data using FAKER.JS library and which will be available to all http calls
+   *
+   * @returns
+   * @memberof InMemoryDataService
+   */
   createDb() {
     this.resetValues();
     this.initRegisteredUsers();
@@ -30,22 +42,44 @@ export class InMemoryDataService implements InMemoryDbService {
     };
   }
 
+  /**
+   * This method reset values of students and registered users
+   *
+   * @memberof InMemoryDataService
+   */
   resetValues() {
     this.students = [];
     this.registeredUsers = [];
   }
 
+  /**
+   * This method add 2 registered users which will be used to login into app
+   *
+   * @memberof InMemoryDataService
+   */
   initRegisteredUsers() {
     this.registeredUsers.push(new User('root', 'root'));
     this.registeredUsers.push(new User('admin', 'admin'));
   }
 
+
+  /**
+   * This method creates dummy student data. We are generating 40 students.
+   *
+   * @memberof InMemoryDataService
+   */
   initStudentData() {
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 40; i++) {
       this.students.push(this.getDummyStudent());
     }
   }
 
+  /**
+   * This method generates document types which will be displayed on Onboarding form.
+   * We are creating this because we need document id to tell server which document was submitted.
+   *
+   * @memberof InMemoryDataService
+   */
   initDocumentTypes() {
     this.documentTypes.push(new StudentDocument(faker.random.uuid(), 'Domicile', true, true));
     this.documentTypes.push(new StudentDocument(faker.random.uuid(), 'Birth Certificate', true, true));
@@ -55,6 +89,13 @@ export class InMemoryDataService implements InMemoryDbService {
     this.documentTypes.push(new StudentDocument(faker.random.uuid(), 'Declaration', true, true));
   }
 
+  /**
+   * This method returns a dummy student using FAKER.JS library
+   *
+   * @private
+   * @returns {Student}
+   * @memberof InMemoryDataService
+   */
   private getDummyStudent(): Student {
     const student = new Student();
     student.uid = faker.random.uuid();
@@ -71,10 +112,6 @@ export class InMemoryDataService implements InMemoryDbService {
     student.imgUrl = faker.image.avatar();
     student.documents = faker.helpers.randomize([this.documentTypes]);
     return student;
-  }
-
-  getStudents(): Array<Student> {
-    return this.students;
   }
 
 }

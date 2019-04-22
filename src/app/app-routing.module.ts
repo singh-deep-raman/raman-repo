@@ -11,7 +11,7 @@ const appRoutes: Routes = [
     redirectTo: '/login',
     pathMatch: 'full'
   },
-  { path: '**', component: StudentListComponent }
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({

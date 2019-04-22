@@ -4,7 +4,13 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/models/user.model';
 import { MessageService } from 'primeng/api';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-
+/**
+ * This class is login component where user can login into application
+ *
+ * @export
+ * @class LoginComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,7 +35,11 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required]],
     });
   }
-
+  /**
+   * This method checks whether entered credentials are valid or invalid
+   *
+   * @memberof LoginComponent
+   */
   isValidUser() {
     const userName = this.userForm.get('username').value;
     const password = this.userForm.get('password').value;

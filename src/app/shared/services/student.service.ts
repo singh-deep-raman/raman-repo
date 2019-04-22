@@ -4,6 +4,12 @@ import { Student } from '../models/student.model';
 import { HttpClient } from '@angular/common/http';
 import { StudentDocument } from '../models/student-document.model';
 
+/**
+ * This Service class perform all student related operations like create, update, delete, get all students, get student by id etc.
+ *
+ * @export
+ * @class StudentService
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +20,6 @@ export class StudentService {
   constructor(
     private httpClient: HttpClient) {
   }
-
 
   /**
    * This method creates a new student on the server by passing the student details in student object
@@ -39,6 +44,12 @@ export class StudentService {
     return onboardStudent$;
   }
 
+  /**
+   * This method generates an id because In-Memory-Web-Api wont allow to use POST request without id
+   *
+   * @returns {number}
+   * @memberof StudentService
+   */
   genId(): number {
     return this.students.length > 0 ? Math.max(...this.students.map(hero => hero.id)) + 1 : 1;
   }
@@ -64,6 +75,7 @@ export class StudentService {
           updateStudent.dob = student.dob;
           updateStudent.category = student.category;
         }
+        this.students = [...this.students];
         observer.next(response);
         observer.complete();
       }, error => {
@@ -120,6 +132,12 @@ export class StudentService {
     return documentTypes$;
   }
 
+  /**
+   * This method returns all the students registered on server.
+   *
+   * @returns {Observable<Array<Student>>}
+   * @memberof StudentService
+   */
   getAllStudents(): Observable<Array<Student>> {
     const students$: Observable<Array<Student>> = new Observable<Array<Student>>(observer => {
       this.httpClient.get(`${this.SERVER_URL + '/students/'}`).subscribe((response: Array<Student>) => {
@@ -136,6 +154,13 @@ export class StudentService {
     return students$;
   }
 
+  /**
+   * This method returns details of a student from server using student uuid
+   *
+   * @param {string} studentId
+   * @returns {Observable<Student>}
+   * @memberof StudentService
+   */
   getStudentById(studentId: string): Observable<Student> {
     const student$ = new Observable<Student>(observer => {
       this.httpClient.get(`${this.SERVER_URL + '/students'}`).subscribe((response: any) => {
